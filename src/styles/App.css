@@ -1,0 +1,52 @@
+/* Base Application Styles */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #222;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+/* top --start*/
+.top {
+  width: 100%;
+  height: 70px;
+  background-color: lightblue;
+}
+.container {
+  width: 100%;
+  background-color: #00692f;
+  height: 800px;
+  padding-top: 5px;
+}
+.menu {
+  width: 154px;
+  height: 100%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 5px;
+  background-color: #fff;
+}
+.menu-item a {
+  text-decoration: none;
+  color:#000;
+}
+.content {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.content-inner {
+  margin-left: 164px;
+  background-color: #fff;
+  height: 100%;
+}
+.on {
+  display: block;
+}
+.off {
+  display: none;
+}
