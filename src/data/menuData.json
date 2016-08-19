@@ -1,7 +1,7 @@
 [{
     "menuName": "德育记录",
     "className": "",
-    "link": "",
+    "link": "#",
     "subMenu": [{
         "menuName": "德育记录录入",
         "link": "",
@@ -21,7 +21,7 @@
 },{
     "menuName": "查询统计",
     "className": "",
-    "link": "",
+    "link": "#",
     "subMenu": [{
         "menuName": "本人录入情况查询",
         "link": "",
@@ -70,7 +70,7 @@
     }]
 },{
     "menuName": "基础数据",
-    "className": "",
+    "className": "#",
     "link": "",
     "subMenu": [{
         "menuName": "学期信息",

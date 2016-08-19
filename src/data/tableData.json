@@ -1,0 +1,36 @@
+[{
+    "check": true,
+    "classNumber": "1",
+    "grade": "一年级",
+    "className": "一年级一班",
+    "headTeacher": "王小明",
+    "classSize": "30"
+},{
+    "check": false,
+    "classNumber": "2",
+    "grade": "一年级",
+    "className": "一年级二班",
+    "headTeacher": "王小明",
+    "classSize": "32"
+},{
+    "check": false,
+    "classNumber": "3",
+    "grade": "二年级",
+    "className": "二年级一班",
+    "headTeacher": "王小明",
+    "classSize": "35"
+},{
+    "check": false,
+    "classNumber": "4",
+    "grade": "二年级",
+    "className": "二年级二班",
+    "headTeacher": "王小明",
+    "classSize": "32"
+},{
+    "check": false,
+    "classNumber": "5",
+    "grade": "一年级",
+    "className": "一年级二班",
+    "headTeacher": "王小明",
+    "classSize": "50"
+}]
