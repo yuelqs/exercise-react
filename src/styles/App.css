@@ -52,3 +52,7 @@ body {
 .off {
   display: none;
 }
+.table thead th,
+.table {
+  text-align: center;
+}

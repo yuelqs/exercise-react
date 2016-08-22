@@ -9,7 +9,14 @@ var Table = React.createClass({
 					<div className="panel-content">
 						<table className="table">
 							<thead>
-
+								<tr>
+									<th>选择</th>
+									<th>学期编号</th>
+									<th>年级</th>
+									<th>班级名称</th>
+									<th>班主任</th>
+									<th>班级人数</th>
+									</tr>
 							</thead>
 							<tbody>
 							{this.props.data.map(function(data,i){
@@ -39,7 +46,7 @@ var TableItem = React.createClass({
 	},
 	handleDelete:function() {
 
-	}
+	},
 	render:function(){
 		var data = this.props.data;
 		return (
