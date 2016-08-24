@@ -6,9 +6,7 @@ var QueryTable = React.createClass({
     filterData:function(search){
         var result = [];
        tableData = tableData.map(function(current){
-            if(current.year){
-
-            }
+       		
        })
     },
 	render:function() {
