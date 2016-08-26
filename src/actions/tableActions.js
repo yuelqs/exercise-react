@@ -15,7 +15,7 @@ export function deleteItem(id) {
 }
 
 export function modifyItem(item) {
-	
+
     dispatcher.dispatch({
         type: 'MODIFY_ITEM',
         item: item
@@ -36,6 +36,6 @@ export function loadData(url) {
     	    type: 'LOAD_DATA',
     	    data: data
     	})
-    },2000)
+    },200)
 
 }
