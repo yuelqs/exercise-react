@@ -1,5 +1,31 @@
 import React from 'react';
 var Table = React.createClass({
+	getInitialState:function(){
+		return {
+		}
+	},
+	handleSelect:function(e){
+		var el = e.target.parentNode;
+		var oldel = this.state.select;
+		var className = '';
+		if(typeof oldel === 'undefined') {
+			el.className='select';
+			this.setState({
+				select:el
+			})
+		}else {
+			if(el === oldel) {
+				return;
+			}else {
+				className = oldel.className;
+				oldel.className = className.replace(/\s*select/,'');
+				el.className = 'select';
+				this.setState({
+					select:el
+				})
+			}
+		}
+	},
 	render:function(){
 		return (
 				<div className="panel">
@@ -18,7 +44,7 @@ var Table = React.createClass({
 									<th>班级人数</th>
 									</tr>
 							</thead>
-							<tbody>
+							<tbody onClick={this.handleSelect}>
 							{this.props.data.map(function(data,i){
 								return <TableItem data={data} key={i}/>
 							})}
@@ -35,28 +61,16 @@ var TableItem = React.createClass({
 	componentWillMount:function() {
 		this.setState({check:this.props.check});
 	},
-	handleCheck:function(e){
-		this.setState({check:e.target.checked});
-	},
-	handleModify:function() {
-
-	},
-	handleClick:function() {
-
-	},
-	handleDelete:function() {
-
-	},
 	render:function(){
 		var data = this.props.data;
 		return (
 				<tr>
-					<td><input type="checkbox" onClick={this.handeCheck}/></td>
+					<td><input type="checkbox"/></td>
 					<td>{data.classNumber}</td>
 					<td>{data.grade}</td>
 					<td>{data.className}</td>
 					<td>{data.headTeacher}</td>
-					<td><span onClick={this.handleModify}>修改</span><span onClick={this.handleDelete}>删除</span></td>
+					<td>{data.classSize}</td>
 				</tr>
 			)
 	}
