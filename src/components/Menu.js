@@ -1,6 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
 var menuData = require('../data/menuData.json');
-
 var Menu = React.createClass({
     render:function() {
         return (
@@ -19,7 +19,6 @@ var MenuItem = React.createClass({
         }
     },
     handleClick:function(e){
-        e.preventDefault();
         e.stopPropagation();
         this.setState({show:!this.state.show});
     },
@@ -27,7 +26,7 @@ var MenuItem = React.createClass({
         var item = this.props.data.subMenu?<MenuContent dataStatus={this.state.show} data={this.props.data.subMenu}/>:'';
         return (
             <li className="menu-item" >
-                <a href={this.props.data.link} onClick={this.handleClick}>{this.props.data.menuName}</a>
+                <Link to={this.props.data.link} onClick={this.handleClick}>{this.props.data.menuName}</Link>
                 {item}
             </li>
         )

@@ -1,15 +1,15 @@
 [{
     "menuName": "德育记录",
     "className": "",
-    "link": "#",
+    "link": "",
     "subMenu": [{
         "menuName": "德育记录录入",
-        "link": "",
+        "link": "/Basic",
         "subMenu": "",
         "className": ""
     }, {
         "menuName": "当天德育数据",
-        "link": "",
+        "link": "/Moral",
         "subMenu": "",
         "className": ""
     }, {

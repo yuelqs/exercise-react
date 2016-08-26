@@ -56,3 +56,10 @@ body {
 .table {
   text-align: center;
 }
+
+li {
+  list-style: none;
+}
+.table .select {
+  background-color: lightblue;
+}
