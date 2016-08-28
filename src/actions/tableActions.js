@@ -1,5 +1,5 @@
 import dispatcher from '../dispatcher/dispatcher';
-
+import reqwest from 'reqwest';
 export function addItem(item) {
     dispatcher.dispatch({
         type: 'ADD_ITEM',
@@ -30,12 +30,15 @@ export function query(search) {
 }
 
 export function loadData(url) {
-    var data = require('../data/tableData.json');
-    setTimeout(()=>{
-    	dispatcher.dispatch({
-    	    type: 'LOAD_DATA',
-    	    data: data
-    	})
-    },200)
-
+    reqwest({
+        url:'../data/tableData.json',
+        method:'get',
+        type:'json',
+        success:function(resp){
+            dispatcher.dispatch({
+                type: 'LOAD_DATA',
+                data: resp
+            })
+        }
+    });
 }
