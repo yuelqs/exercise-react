@@ -11,13 +11,24 @@ class TableStores extends EventEmitter {
 			case 'LOAD_DATA':{
 				this.data = actions.data;
 				this.emit('change');
+				break;
 			}
-			break;
 			case 'ADD_ITEM':{
 				this.data.push(actions.item);
 				this.emit('change');
+				break;
+			}
+			case 'MODIFY_ITEM':{
+
 			}
 		}
+	}
+	deleteItem(id){
+	this.data =  this.data.map(function(current){
+			if(current.id !== id) {
+				return current
+			}
+		})
 	}
 	getData(){
 		return this.data;

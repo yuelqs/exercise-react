@@ -8,21 +8,23 @@ var Table = React.createClass({
 		var el = e.target.parentNode;
 		var oldel = this.state.select;
 		var className = '';
-		if(typeof oldel === 'undefined') {
-			el.className='select';
-			this.setState({
-				select:el
-			})
-		}else {
-			if(el === oldel) {
-				return;
-			}else {
-				className = oldel.className;
-				oldel.className = className.replace(/\s*select/,'');
-				el.className = 'select';
+		if(el.nodeType===1&&el.nodeName.toLowerCase()==='tr') {
+			if(typeof oldel === 'undefined') {
+				el.className='select';
 				this.setState({
 					select:el
 				})
+			}else {
+				if(el === oldel&&el.nodeName.toLowerCase()==="tr") {
+					return;
+				}else {
+					className = oldel.className;
+					oldel.className = className.replace(/\s*select/,'');
+					el.className = 'select';
+					this.setState({
+						select:el
+					})
+				}
 			}
 		}
 	},
