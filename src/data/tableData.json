@@ -4,33 +4,38 @@
     "grade": "一年级",
     "className": "一年级一班",
     "headTeacher": "王小明",
-    "classSize": "30"
+    "classSize": "30",
+    "id":0
 },{
     "check": false,
     "classNumber": "2",
     "grade": "一年级",
     "className": "一年级二班",
     "headTeacher": "王小明",
-    "classSize": "32"
+    "classSize": "32",
+    "id":1
 },{
     "check": false,
     "classNumber": "3",
     "grade": "二年级",
     "className": "二年级一班",
     "headTeacher": "王小明",
-    "classSize": "35"
+    "classSize": "35",
+    "id":2
 },{
     "check": false,
     "classNumber": "4",
     "grade": "二年级",
     "className": "二年级二班",
     "headTeacher": "王小明",
-    "classSize": "32"
+    "classSize": "32",
+    "id":3
 },{
     "check": false,
     "classNumber": "5",
     "grade": "一年级",
     "className": "一年级二班",
     "headTeacher": "王小明",
-    "classSize": "50"
+    "classSize": "50",
+    "id":4
 }]

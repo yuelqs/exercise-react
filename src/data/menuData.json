@@ -9,81 +9,11 @@
         "className": ""
     }, {
         "menuName": "当天德育数据",
-        "link": "/Moral",
+        "link": "",
         "subMenu": "",
         "className": ""
     }, {
         "menuName": "学生鉴定",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }]
-},{
-    "menuName": "查询统计",
-    "className": "",
-    "link": "#",
-    "subMenu": [{
-        "menuName": "本人录入情况查询",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "班主任负责班级情况查询",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "学生德育情况查询",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "学校德育情况统计",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "班级德育情况统计",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "教师录入情况统计",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "全校各班文明总分表",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "德育之星",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "星级文明班",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }]
-},{
-    "menuName": "基础数据",
-    "className": "#",
-    "link": "",
-    "subMenu": [{
-        "menuName": "学期信息",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "德育规范类别",
-        "link": "",
-        "subMenu": "",
-        "className": ""
-    }, {
-        "menuName": "德育规范条款",
         "link": "",
         "subMenu": "",
         "className": ""

@@ -1,21 +1,22 @@
 import React from 'react';
 
-var Query = React.createClass({
+var Panel = React.createClass({
 	_onClick:function(){
 		var searchData = {};
 	},
 	render:function() {
+		var {title,children} = this.props;
 		return (
 			<div className="panel">
 				<div className="panel-heading">
 					<h2 className="panel-title">
-						查询条件
+						{title}
 					</h2>
 				</div>
 				<div className="panel-content">
-					{this.props.children}
+					{children}
 				</div>
 			</div>)
 	}
 });
-export default Query;
+export default Panel;

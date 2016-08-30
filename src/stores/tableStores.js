@@ -11,15 +11,16 @@ class TableStores extends EventEmitter {
 			case 'LOAD_DATA':{
 				this.data = actions.data;
 				this.emit('change');
-				break;
 			}
+			break;
 			case 'ADD_ITEM':{
 				this.data.push(actions.item);
 				this.emit('change');
-				break;
 			}
-			case 'MODIFY_ITEM':{
-
+			break;
+			case 'DELETE_ITEM':{
+				this.deleteItem(actions.id);
+				this.emit('change');
 			}
 		}
 	}
@@ -32,6 +33,9 @@ class TableStores extends EventEmitter {
 	}
 	getData(){
 		return this.data;
+	}
+	getDataLength() {
+		return this.data.length;
 	}
 }
 

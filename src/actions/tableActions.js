@@ -31,7 +31,7 @@ export function query(search) {
 
 export function loadData(url) {
     reqwest({
-        url:'../data/tableData.json',
+        url:url,
         method:'get',
         type:'json',
         success:function(resp){
