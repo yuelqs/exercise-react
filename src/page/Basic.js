@@ -12,7 +12,8 @@ export default class Basic extends React.Component {
 		this.toggleModal = this.toggleModal.bind(this);
 		this.addData = this.addData.bind(this);
 		this.state={
-			modal:true
+			modal:true,
+			selectId:''
 		}
 	}
 	toggleModal() {
@@ -30,6 +31,21 @@ export default class Basic extends React.Component {
 		item.classSize = this.refs.classSize.value;
 		item.id = length;
 		TableActions.addItem(item);
+	}
+	modifyItem(){
+		var id = this.state.selectId
+		if( id === '') {
+			alert("请先选中要修改的项");
+		}else {
+			var data = TableStores.getDataById(this.state.selectId)
+			
+		}
+
+	}
+	getSelect(id) {
+		this.setState({
+			selectId:+id
+		})
 	}
 	render() {
 		var url = '../data/tableData.json';
@@ -56,18 +72,18 @@ export default class Basic extends React.Component {
 				</Tools>
 				{/*表格*/}
 				<Panel title="学期信息">
-					<Table url={url}/>
+					<Table url={url} getSelect={this.getSelect.bind(this)}/>
 				</Panel>
 				{/*模态框*/}
 				<Modal width="600px" height="200px" title="增加" hidden={this.state.modal}>
 					<ModalHeader title="增加" close={this.toggleModal}/>
 					<ModalBody>
 						<Form inline={true}>
-							<Input name="termNum" fieldName="学期编号"/>
+							<Input type="number" name="termNum" fieldName="学期编号"/>
 							<Input name="grade" fieldName="年级"/>
 							<Input name="className" fieldName="班级名称"/>
 							<Input name="headTeacher" fieldName="班主任"/>
-							<Input name="classSize" fieldName="班级人数"/>
+							<Input type="number" name="classSize" fieldName="班级人数"/>
 						</Form>
 					</ModalBody>
 					<ModalFooter>

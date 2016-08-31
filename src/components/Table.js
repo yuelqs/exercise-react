@@ -31,6 +31,7 @@ var Table = React.createClass({
 				this.setState({
 					select:el
 				})
+				this.props.getSelect(el.dataset.id);
 			}else {
 				if(el === oldel&&el.nodeName.toLowerCase()==='tr') {
 					return;
@@ -41,6 +42,7 @@ var Table = React.createClass({
 					this.setState({
 						select:el
 					})
+					this.props.getSelect(el.dataset.id);
 				}
 			}
 		}
@@ -73,7 +75,7 @@ var TableItem = React.createClass({
 	render:function() {
 		var data = this.props.data;
 		return (
-				<tr>
+				<tr data-id={data.id}>
 					<td><input type="checkbox"/></td>
 					<td>{data.classNumber}</td>
 					<td>{data.grade}</td>

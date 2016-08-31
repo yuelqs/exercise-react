@@ -37,6 +37,14 @@ class TableStores extends EventEmitter {
 	getDataLength() {
 		return this.data.length;
 	}
+	getDataByID(id) {
+		var data = this.data.map(function(current){
+				if(current.id===id) {
+					return current
+				}
+		})
+		return data[0];
+	}
 }
 
 

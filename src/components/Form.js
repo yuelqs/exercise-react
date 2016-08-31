@@ -17,24 +17,63 @@ var Form = React.createClass({
 })
 
 var Input = React.createClass({
+	getDefaultProps:function() {
+		return {
+			type:'other'
+		}
+	},
 	getInitialState:function() {
 		return {
-			value:''
+			value:this.props.value||'',
+			errorMessage:'',
+			vaild:true,
+			vaildateStart:false
+		}
+	},
+	validate:{
+		number:function(){
+			if(this.state.value.match(/^\d*$/)){
+				 this.setState({
+					vaild:true,
+					errorMessage:''
+				})
+			}else {
+				this.setState({
+					vaild:false,
+					errorMessage:'只能输入数字'
+				})
+			}
+		},
+		other:function(){
+			this.setState({
+				vaild:true
+			})
 		}
 	},
 	changeValue:function(e) {
 		this.setState({
 			value:e.target.value
 		})
+		if(this.state.vaildateStart) {
+
+		}else {
+			setTimeout(function(){
+				this.validate[this.props.type].bind(this)();
+				this.setState({
+					vaildateStart:false
+				})
+			}.bind(this),1000);
+		}
 	},
 	render:function() {
-		var fieldName = this.props.fieldName;
+		var {fieldName,name} = this.props;
+		var {errorMessage,value,vaild} = this.state;
 		return (
-				<div className="form-group">
-					<label htmlFor={this.props.name}>{fieldName}</label>
-					<input type="text" value={this.state.value} onChange={this.changeValue} className="form-control" ref={this.props.name} name={this.props.name}/>
+				<div className={vaild?'form-group':'has-error form-group'}>
+					<label htmlFor={name}>{fieldName}</label>
+					<input type="text" value={value} onChange={this.changeValue} className='form-control' ref={name} name={name}/>
+					<div className={vaild?'':'alert alert-danger'}>{errorMessage}</div>
 				</div>
-
 		)
 	}
 })
