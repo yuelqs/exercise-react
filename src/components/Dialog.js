@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 var Dialog = React.createClass({
+	statics:{
+		open:function(){
+			console.log('1111111111111111111');
+		}
+	},
 	getDefaultProps:function(){
 		return {
 			active:false
@@ -12,7 +17,7 @@ var Dialog = React.createClass({
 			this.node.className = "modal";
 			this.node.style.display="block";
 			document.getElementsByTagName('body')[0].appendChild(this.node);
-			var {width,height,active,title,close}= this.props;
+			var {width,height,title,close,data}= this.props;
 			let modal = (
 						<div className="modal-dialog" style={{width:width,height:height}}>
 							<div className="modal-content">
@@ -32,6 +37,7 @@ var Dialog = React.createClass({
 		if(this.props.active&&!newProps.active) {
 			this.node.querySelector('.modal-header button').removeEventListener('click',close);
 			ReactDOM.unmountComponentAtNode(this.node)
+			this.node.parentNode.removeChild(this.node);
 		}
 	},
 	componentWillUnmount:function(){
